@@ -72,3 +72,31 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+
+
+# --- Audio Middleware Build Outputs & Cache ---
+# If using Wwise: Ignore local user settings and cache, but KEEP designer files
+.wwise-cache/
+RootAuthoring/ProjectName_WwiseProject/.ext/
+RootAuthoring/ProjectName_WwiseProject/Conversion Settings/.cache/
+
+# If using FMOD: Ignore local cache and user preferences
+.fmod_cache/
+Plugins/FMODStudio/Binaries/
+
+# --- DAW Backup & Peak Files (Crucial for Audio Editors) ---
+# REAPER temporary files
+*.rpp-bak
+*.reapeaks
+*.rpp-back*
+
+# Pro Tools backups and cache
+Session File Backups/
+Waveform Cache.wfm
+AAX Plug-In Settings/
+
+# Ableton / Logic / General temporary audio data
+*.asd
+*Peak.Format
+.DS_Store

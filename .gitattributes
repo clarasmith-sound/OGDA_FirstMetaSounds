@@ -1,2 +1,50 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+
+# --- Unreal Engine Core & Assets (LFS + Lockable) ---
+# Unreal binaries are unmergeable. 'lockable' ensures exclusive checkout.
+*.uasset filter=lfs diff=lfs merge=binary -text lockable
+*.umap filter=lfs diff=lfs merge=binary -text lockable
+
+# --- Source Audio Files (LFS) ---
+# Case-insensitive rules to catch both .wav and .WAV, etc.
+*.[wW][aA][vV] filter=lfs diff=lfs merge=binary -text
+*.[mM][pP]3 filter=lfs diff=lfs merge=binary -text
+*.[oO][gG][gG] filter=lfs diff=lfs merge=binary -text
+*.[fF][lL][aA][cC] filter=lfs diff=lfs merge=binary -text
+*.[aA][iI][fF][fF] filter=lfs diff=lfs merge=binary -text
+*.[aA][iI][fF] filter=lfs diff=lfs merge=binary -text
+
+# --- Audio Middleware & DAW Projects (LFS) ---
+# Wwise / FMOD binaries and cache
+*.bnk filter=lfs diff=lfs merge=binary -text
+*.wem filter=lfs diff=lfs merge=binary -text
+*.fsb filter=lfs diff=lfs merge=binary -text
+*.fev filter=lfs diff=lfs merge=binary -text
+
+# Common DAW session binaries (Pro Tools, Reaper, Ableton, Logic)
+*.ptx filter=lfs diff=lfs merge=binary -text
+*.rpp filter=lfs diff=lfs merge=binary -text
+*.als filter=lfs diff=lfs merge=binary -text
+*.logic filter=lfs diff=lfs merge=binary -text
+*.cpr filter=lfs diff=lfs merge=binary -text
+
+# --- Other Engine / Project Binaries ---
+*.exe filter=lfs diff=lfs merge=binary -text
+*.dll filter=lfs diff=lfs merge=binary -text
+*.dylib filter=lfs diff=lfs merge=binary -text
+*.so filter=lfs diff=lfs merge=binary -text
+*.pdb filter=lfs diff=lfs merge=binary -text
+*.app filter=lfs diff=lfs merge=binary -text
+
+# 3D Assets and Textures
+*.fbx filter=lfs diff=lfs merge=binary -text lockable
+*.obj filter=lfs diff=lfs merge=binary -text lockable
+*.png filter=lfs diff=lfs merge=binary -text
+*.jpg filter=lfs diff=lfs merge=binary -text
+*.jpeg filter=lfs diff=lfs merge=binary -text
+*.tga filter=lfs diff=lfs merge=binary -text
+*.psd filter=lfs diff=lfs merge=binary -text
+*.exr filter=lfs diff=lfs merge=binary -text
+*.hdr filter=lfs diff=lfs merge=binary -text
